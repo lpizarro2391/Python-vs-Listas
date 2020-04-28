@@ -11,4 +11,4 @@ while i < 5:
 i=0
 while i<5:
     print("Moneda: ",cripto[i],"Cantidad: ",str(cant[i]),",Cotizacion: "+str(cotiz[i]))
-    i=1+1
+    i=i+1
