@@ -13,4 +13,7 @@ def esmoneda(cripto):
 
 def esnumero(numero):
     return numero.replace('.','',1).isdigit()
-    
+
+monedas=[]
+cantidades=[]
+cotizaciones=[]
