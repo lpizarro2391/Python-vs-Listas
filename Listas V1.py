@@ -17,3 +17,10 @@ def esnumero(numero):
 monedas=[]
 cantidades=[]
 cotizaciones=[]
+while i<3:
+    moneda=input("Ingrese el nombre de la moneda: ")
+    while not esmoneda (moneda):
+        print("Moneda Invalida")
+        monedas=input("Ingrese el nombre de la moneda:")
+    else:
+
