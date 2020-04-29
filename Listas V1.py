@@ -23,4 +23,6 @@ while i<3:
         print("Moneda Invalida")
         monedas=input("Ingrese el nombre de la moneda:")
     else:
-
+        monedas.append(moneda)
+        data = get_price(moneda+"USD")
+        cotizaciones.append(float(data["price"]))
