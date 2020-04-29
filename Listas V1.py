@@ -36,3 +36,12 @@ while i<3:
 
 i=0
 total=0
+
+while i<3:
+    total+=cantidades[i]*cotizaciones[i]
+    print("Moneda: ",monedas[i]),
+    ",Cantidad: ",cantidades[i],
+    ",Cotizacion:",cotizaciones[i],
+    ",Cantidad de USDT" 
+i+=1
+print("Total en USDT es:",str(total))
