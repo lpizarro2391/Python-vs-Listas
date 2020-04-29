@@ -17,6 +17,7 @@ def esnumero(numero):
 monedas=[]
 cantidades=[]
 cotizaciones=[]
+i=0
 while i<3:
     moneda=input("Ingrese el nombre de la moneda: ")
     while not esmoneda (moneda):
@@ -26,3 +27,12 @@ while i<3:
         monedas.append(moneda)
         data = get_price(moneda+"USD")
         cotizaciones.append(float(data["price"]))
+        cantidad =input("Indique la cantidad de "+monedas+": ")
+        while not esnumero(cantidad):
+            cantidad: input("Indique la cantidad de "+moneda+": ")
+        else: 
+            cantidades.append(cantidad)
+    i+=1
+
+i=0
+total=0
