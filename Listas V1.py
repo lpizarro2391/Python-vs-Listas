@@ -1,14 +1,14 @@
-import request
+import requests
 _ENDPOINT = "http://api.binance.com"
 
 def _url(api):
     return _ENDPOINT+api
 
 def get_price(cripto):
-    return requests.get(_url("/api/v3/ticket/price?symbol="+cripto))
-
+    return requests.get(_url("/api/v3/ticker/price?symbol="+cripto))
+   
 def esmoneda(cripto):
-    criptos = ["BTC", "BBC","LTC","ETH","ETC","XRP" ]
+    criptos = ["BTC", "BCC","LTC","ETH","ETC","XRP"]
     return  cripto in criptos
 
 def esnumero(numero):
@@ -20,18 +20,18 @@ cotizaciones=[]
 i=0
 while i<3:
     moneda=input("Ingrese el nombre de la moneda: ")
-    while not esmoneda (moneda):
+    while not esmoneda(moneda):
         print("Moneda Invalida")
-        monedas=input("Ingrese el nombre de la moneda:")
+        moneda=input("Ingrese el nombre de la moneda:")
     else:
         monedas.append(moneda)
-        data = get_price(moneda+"USD")
+        data = get_price(moneda+"USDT").json()
         cotizaciones.append(float(data["price"]))
-        cantidad =input("Indique la cantidad de "+monedas+": ")
+        cantidad =input("Indique la cantidad de "+moneda+": ")
         while not esnumero(cantidad):
             cantidad: input("Indique la cantidad de "+moneda+": ")
         else: 
-            cantidades.append(cantidad)
+            cantidades.append(float(cantidad))
     i+=1
 
 i=0
@@ -39,9 +39,9 @@ total=0
 
 while i<3:
     total+=cantidades[i]*cotizaciones[i]
-    print("Moneda: ",monedas[i]),
+    print("Moneda: ",monedas[i],
     ",Cantidad: ",cantidades[i],
     ",Cotizacion:",cotizaciones[i],
-    ",Cantidad de USDT" 
-i+=1
+    ",Cantidad de USDT",cantidades[i]*cotizaciones[i])
+    i+=1
 print("Total en USDT es:",str(total))
