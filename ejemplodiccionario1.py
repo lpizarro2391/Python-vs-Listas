@@ -16,8 +16,7 @@ headers = {
 data = requests.get(
     "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest", headers=headers).json()
 for id in data["data"]:
-    monedas_dict[data["data"][id]["symbol"]
-                 ] = data["data"][id]["quotes"]["USD"]["Price"]
+   monedas_dict[id["symbol"]] = id["quote"]["USD"]["price"]
 
 monedas = monedas_dict.keys()
 
