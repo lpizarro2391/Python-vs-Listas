@@ -1,4 +1,4 @@
-nombre_archivo = "Glosario.txt"
+nombre_archivo = "glosario.txt"
 archivo = open(nombre_archivo,"r")
 
 texto = archivo.read()
