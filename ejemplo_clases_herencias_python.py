@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 class Figura(ABC):
-    def _init_(self,nombre):
+    def __init__(self,nombre):
         self.nombre = nombre
     
     @abstractmethod
@@ -9,8 +9,8 @@ class Figura(ABC):
     def perimetro (self):
         pass
 class Rectangulo (Figura):
-    def _init_(self,nombre, base,altura):
-        super()._init_(nombre)
+    def __init__(self,nombre, base,altura):
+        super().__init__(nombre)
         self.base = base
         self.altura = altura
     def area(self):
